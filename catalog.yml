@@ -1,0 +1,7 @@
+unique_name: sales_analytics_catalog
+object_type: catalog
+label: Sales Analytics
+description: Single semantic model deployed once per tenant. The tenant database, schema and AtScale data warehouse connection are injected at deploy time through SML environment variables in the connection file.
+version: 1.7
+aggressive_agg_promotion: false
+build_speculative_aggs: false

@@ -1,0 +1,92 @@
+unique_name: Date Dimension
+object_type: dimension
+label: Date Dimension
+description: 'Standard Gregorian calendar: Year, Quarter, Month, Day.'
+type: time
+hierarchies:
+- unique_name: Date Hierarchy
+  label: Date Hierarchy
+  folder: Date Attributes
+  filter_empty: 'yes'
+  levels:
+  - unique_name: Year
+  - unique_name: Quarter
+    parallel_periods:
+    - key_columns:
+      - PRIOR_YEAR_NUM
+      level: Year
+    secondary_attributes:
+    - unique_name: Quarter of Year
+      label: Quarter of Year
+      description: Quarter number within the year (1-4).
+      dataset: DIM_DATE
+      key_columns:
+      - QUARTER_OF_YEAR
+      name_column: QUARTER_OF_YEAR
+      sort_column: QUARTER_OF_YEAR
+  - unique_name: Month
+    parallel_periods:
+    - key_columns:
+      - PRIOR_YEAR_NUM
+      level: Year
+    secondary_attributes:
+    - unique_name: Month of Year
+      label: Month of Year
+      description: Month number within the year (1-12).
+      dataset: DIM_DATE
+      key_columns:
+      - MONTH_OF_YEAR
+      name_column: MONTH_OF_YEAR
+      sort_column: MONTH_OF_YEAR
+  - unique_name: Day
+    parallel_periods:
+    - key_columns:
+      - PRIOR_YEAR_NUM
+      level: Year
+    secondary_attributes:
+    - unique_name: Day of Week
+      label: Day of Week
+      description: Day of week name (Mon-Sun).
+      dataset: DIM_DATE
+      key_columns:
+      - DAY_OF_WEEK_NAME
+      name_column: DAY_OF_WEEK_NAME
+      sort_column: DAY_OF_WEEK_NAME
+level_attributes:
+- unique_name: Year
+  label: Year
+  description: Calendar year.
+  dataset: DIM_DATE
+  key_columns:
+  - YEAR_NUM
+  name_column: YEAR_NAME
+  sort_column: YEAR_NUM
+  time_unit: year
+- unique_name: Quarter
+  label: Quarter
+  description: Calendar quarter (e.g. Q1 2025).
+  dataset: DIM_DATE
+  key_columns:
+  - QUARTER_KEY
+  name_column: QUARTER_NAME
+  sort_column: QUARTER_KEY
+  time_unit: quarter
+- unique_name: Month
+  label: Month
+  description: Calendar month (e.g. Jan 2025).
+  dataset: DIM_DATE
+  key_columns:
+  - MONTH_KEY
+  name_column: MONTH_NAME
+  sort_column: MONTH_KEY
+  time_unit: month
+- unique_name: Day
+  label: Day
+  description: Calendar day.
+  dataset: DIM_DATE
+  is_unique_key: true
+  key_columns:
+  - DATE_KEY
+  name_column: DATE_NAME
+  sort_column: DATE_KEY
+  time_unit: day

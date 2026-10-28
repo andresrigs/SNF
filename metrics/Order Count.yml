@@ -1,0 +1,9 @@
+unique_name: Order Count
+object_type: metric
+label: Order Count
+description: Distinct sales orders.
+calculation_method: count distinct
+format: general number
+dataset: FACT_SALES
+column: ORDER_ID
+unrelated_dimensions_handling: repeat

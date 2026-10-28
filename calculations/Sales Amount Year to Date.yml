@@ -1,0 +1,9 @@
+unique_name: Sales Amount Year to Date
+object_type: metric_calc
+label: Sales Amount Year to Date
+description: Sales Amount accumulated from the start of the year.
+expression: |-
+  CASE WHEN ISEMPTY([Measures].[Sales Amount]) THEN NULL
+  ELSE Aggregate(PeriodsToDate([Date Dimension].[Date Hierarchy].[Year], [Date Dimension].[Date Hierarchy].CurrentMember), [Measures].[Sales Amount])
+  END
+format: $#,##0.00

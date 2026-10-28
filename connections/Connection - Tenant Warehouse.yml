@@ -1,0 +1,6 @@
+unique_name: Connection - Tenant Warehouse
+object_type: connection
+label: Tenant Warehouse
+as_connection: ${SF_CONNECTION}
+database: ${TENANT_DB}
+schema: ${TENANT_SCHEMA}

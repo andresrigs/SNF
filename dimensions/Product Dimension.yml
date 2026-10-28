@@ -1,0 +1,39 @@
+unique_name: Product Dimension
+object_type: dimension
+label: Product Dimension
+description: Products grouped by category.
+type: standard
+hierarchies:
+- unique_name: Product Hierarchy
+  label: Product Hierarchy
+  folder: Product Attributes
+  levels:
+  - unique_name: Product Category
+  - unique_name: Product Name
+    secondary_attributes:
+    - unique_name: Product SKU
+      label: Product SKU
+      description: Product stock-keeping unit code.
+      dataset: DIM_PRODUCT
+      key_columns:
+      - SKU
+      name_column: SKU
+      sort_column: SKU
+level_attributes:
+- unique_name: Product Category
+  label: Product Category
+  description: Product category.
+  dataset: DIM_PRODUCT
+  key_columns:
+  - CATEGORY
+  name_column: CATEGORY
+  sort_column: CATEGORY
+- unique_name: Product Name
+  label: Product Name
+  description: Product name.
+  dataset: DIM_PRODUCT
+  is_unique_key: true
+  key_columns:
+  - PRODUCT_ID
+  name_column: PRODUCT_NAME
+  sort_column: PRODUCT_NAME

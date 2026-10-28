@@ -1,0 +1,9 @@
+unique_name: Customer Count
+object_type: metric
+label: Customer Count
+description: Distinct customers who purchased.
+calculation_method: count distinct
+format: general number
+dataset: FACT_SALES
+column: CUSTOMER_ID
+unrelated_dimensions_handling: repeat

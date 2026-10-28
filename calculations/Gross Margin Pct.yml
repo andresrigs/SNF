@@ -1,0 +1,9 @@
+unique_name: Gross Margin Pct
+object_type: metric_calc
+label: Gross Margin Pct
+description: Gross Margin as a percent of Sales Amount.
+expression: |-
+  CASE WHEN ISEMPTY([Measures].[Sales Amount]) OR [Measures].[Sales Amount] = 0 THEN NULL
+  ELSE [Measures].[Gross Margin] / [Measures].[Sales Amount]
+  END
+format: percent

@@ -1,0 +1,71 @@
+note: Profile of the ACME tenant as produced by snowflake/02_load_sample_data.sql
+  (exact by construction of the generator).
+tables:
+- name: DIM_DATE
+  schema: ACME_SALES
+  row_count: 1096
+  declared_primary_key:
+  - DATE_KEY
+  columns:
+  - name: DATE_KEY
+    distinct_count: 1096
+    is_unique: true
+    likely_role: primary_key
+  - name: YEAR_NUM
+    distinct_count: 3
+  - name: QUARTER_KEY
+    distinct_count: 12
+  - name: MONTH_KEY
+    distinct_count: 36
+- name: DIM_CUSTOMER
+  schema: ACME_SALES
+  row_count: 250
+  declared_primary_key:
+  - CUSTOMER_ID
+  columns:
+  - name: CUSTOMER_ID
+    distinct_count: 250
+    is_unique: true
+    likely_role: primary_key
+  - name: REGION
+    distinct_count: 4
+  - name: COUNTRY
+    distinct_count: 10
+  - name: CUSTOMER_SEGMENT
+    distinct_count: 3
+- name: DIM_PRODUCT
+  schema: ACME_SALES
+  row_count: 24
+  declared_primary_key:
+  - PRODUCT_ID
+  columns:
+  - name: PRODUCT_ID
+    distinct_count: 24
+    is_unique: true
+    likely_role: primary_key
+  - name: CATEGORY
+    distinct_count: 4
+- name: FACT_SALES
+  schema: ACME_SALES
+  declared_primary_key:
+  - ORDER_ID
+  - ORDER_LINE
+  declared_foreign_keys:
+  - columns:
+    - ORDER_DATE_KEY
+    references:
+      table: DIM_DATE
+      columns:
+      - DATE_KEY
+  - columns:
+    - CUSTOMER_ID
+    references:
+      table: DIM_CUSTOMER
+      columns:
+      - CUSTOMER_ID
+  - columns:
+    - PRODUCT_ID
+    references:
+      table: DIM_PRODUCT
+      columns:
+      - PRODUCT_ID

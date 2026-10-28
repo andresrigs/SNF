@@ -1,0 +1,48 @@
+unique_name: Customer Dimension
+object_type: dimension
+label: Customer Dimension
+description: The tenant's end customers by region and country.
+type: standard
+hierarchies:
+- unique_name: Customer Geography
+  label: Customer Geography
+  folder: Customer Attributes
+  levels:
+  - unique_name: Region
+  - unique_name: Country
+  - unique_name: Customer Name
+    secondary_attributes:
+    - unique_name: Customer Segment
+      label: Customer Segment
+      description: 'Customer size segment: Enterprise, Mid-Market or SMB.'
+      dataset: DIM_CUSTOMER
+      key_columns:
+      - CUSTOMER_SEGMENT
+      name_column: CUSTOMER_SEGMENT
+      sort_column: CUSTOMER_SEGMENT
+level_attributes:
+- unique_name: Region
+  label: Region
+  description: Sales region (North America, Latin America, EMEA, APAC).
+  dataset: DIM_CUSTOMER
+  key_columns:
+  - REGION
+  name_column: REGION
+  sort_column: REGION
+- unique_name: Country
+  label: Country
+  description: Customer country.
+  dataset: DIM_CUSTOMER
+  key_columns:
+  - COUNTRY
+  name_column: COUNTRY
+  sort_column: COUNTRY
+- unique_name: Customer Name
+  label: Customer Name
+  description: Customer account name.
+  dataset: DIM_CUSTOMER
+  is_unique_key: true
+  key_columns:
+  - CUSTOMER_ID
+  name_column: CUSTOMER_NAME
+  sort_column: CUSTOMER_NAME

@@ -1,0 +1,9 @@
+unique_name: Sales Amount YoY Growth Pct
+object_type: metric_calc
+label: Sales Amount YoY Growth Pct
+description: Year-over-year growth of Sales Amount.
+expression: |-
+  CASE WHEN ISEMPTY([Measures].[Sales Amount Prior Year]) OR [Measures].[Sales Amount Prior Year] = 0 THEN NULL
+  ELSE ([Measures].[Sales Amount] - [Measures].[Sales Amount Prior Year]) / [Measures].[Sales Amount Prior Year]
+  END
+format: percent

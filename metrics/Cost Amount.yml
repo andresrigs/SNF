@@ -1,0 +1,9 @@
+unique_name: Cost Amount
+object_type: metric
+label: Cost Amount
+description: Cost of goods / services sold.
+calculation_method: sum
+format: $#,##0.00
+dataset: FACT_SALES
+column: COST_AMOUNT
+unrelated_dimensions_handling: repeat

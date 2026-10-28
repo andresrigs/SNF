@@ -1,0 +1,19 @@
+unique_name: DIM_PRODUCT
+object_type: dataset
+label: DIM_PRODUCT
+description: Product catalog with category, list price and unit cost.
+connection_id: Connection - Tenant Warehouse
+table: DIM_PRODUCT
+columns:
+- name: PRODUCT_ID
+  data_type: long
+- name: SKU
+  data_type: string
+- name: PRODUCT_NAME
+  data_type: string
+- name: CATEGORY
+  data_type: string
+- name: LIST_PRICE
+  data_type: decimal(12,2)
+- name: UNIT_COST
+  data_type: decimal(12,2)

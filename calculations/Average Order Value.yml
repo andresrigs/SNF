@@ -1,0 +1,9 @@
+unique_name: Average Order Value
+object_type: metric_calc
+label: Average Order Value
+description: Sales Amount divided by Order Count.
+expression: |-
+  CASE WHEN ISEMPTY([Measures].[Order Count]) OR [Measures].[Order Count] = 0 THEN NULL
+  ELSE [Measures].[Sales Amount] / [Measures].[Order Count]
+  END
+format: $#,##0.00

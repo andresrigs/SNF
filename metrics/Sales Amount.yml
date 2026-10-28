@@ -1,0 +1,9 @@
+unique_name: Sales Amount
+object_type: metric
+label: Sales Amount
+description: Net sales after discount.
+calculation_method: sum
+format: $#,##0.00
+dataset: FACT_SALES
+column: SALES_AMOUNT
+unrelated_dimensions_handling: repeat

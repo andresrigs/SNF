@@ -1,0 +1,55 @@
+unique_name: sales_analytics
+object_type: model
+label: Sales Analytics
+description: Tenant sales analytics. Same definition for every tenant; data source comes from the tenant connection.
+visible: true
+relationships:
+- unique_name: FACT_SALES_Date_Dimension
+  from:
+    dataset: FACT_SALES
+    join_columns:
+    - ORDER_DATE_KEY
+  to:
+    dimension: Date Dimension
+    level: Day
+- unique_name: FACT_SALES_Customer_Dimension
+  from:
+    dataset: FACT_SALES
+    join_columns:
+    - CUSTOMER_ID
+  to:
+    dimension: Customer Dimension
+    level: Customer Name
+- unique_name: FACT_SALES_Product_Dimension
+  from:
+    dataset: FACT_SALES
+    join_columns:
+    - PRODUCT_ID
+  to:
+    dimension: Product Dimension
+    level: Product Name
+metrics:
+- unique_name: Sales Amount
+  folder: Sales Metrics
+- unique_name: Cost Amount
+  folder: Sales Metrics
+- unique_name: Discount Amount
+  folder: Sales Metrics
+- unique_name: Order Quantity
+  folder: Sales Metrics
+- unique_name: Order Count
+  folder: Order Metrics
+- unique_name: Customer Count
+  folder: Order Metrics
+- unique_name: Gross Margin
+  folder: Profitability
+- unique_name: Gross Margin Pct
+  folder: Profitability
+- unique_name: Average Order Value
+  folder: Order Metrics
+- unique_name: Sales Amount Prior Year
+  folder: Time Intelligence
+- unique_name: Sales Amount YoY Growth Pct
+  folder: Time Intelligence
+- unique_name: Sales Amount Year to Date
+  folder: Time Intelligence

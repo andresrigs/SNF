@@ -1,0 +1,17 @@
+unique_name: DIM_CUSTOMER
+object_type: dataset
+label: DIM_CUSTOMER
+description: The tenant's end customers with segment, country and region.
+connection_id: Connection - Tenant Warehouse
+table: DIM_CUSTOMER
+columns:
+- name: CUSTOMER_ID
+  data_type: long
+- name: CUSTOMER_NAME
+  data_type: string
+- name: CUSTOMER_SEGMENT
+  data_type: string
+- name: COUNTRY
+  data_type: string
+- name: REGION
+  data_type: string

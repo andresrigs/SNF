@@ -1,0 +1,9 @@
+unique_name: Order Quantity
+object_type: metric
+label: Order Quantity
+description: Units sold.
+calculation_method: sum
+format: general number
+dataset: FACT_SALES
+column: QUANTITY
+unrelated_dimensions_handling: repeat

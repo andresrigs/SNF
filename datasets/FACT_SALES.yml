@@ -1,0 +1,29 @@
+unique_name: FACT_SALES
+object_type: dataset
+label: FACT_SALES
+description: 'Sales order lines: quantity, price, discount, sales and cost amounts.'
+connection_id: Connection - Tenant Warehouse
+table: FACT_SALES
+columns:
+- name: ORDER_ID
+  data_type: string
+- name: ORDER_LINE
+  data_type: long
+- name: ORDER_DATE_KEY
+  data_type: long
+- name: CUSTOMER_ID
+  data_type: long
+- name: PRODUCT_ID
+  data_type: long
+- name: QUANTITY
+  data_type: long
+- name: UNIT_PRICE
+  data_type: decimal(12,2)
+- name: DISCOUNT_PCT
+  data_type: decimal(5,4)
+- name: DISCOUNT_AMOUNT
+  data_type: decimal(14,2)
+- name: SALES_AMOUNT
+  data_type: decimal(14,2)
+- name: COST_AMOUNT
+  data_type: decimal(14,2)

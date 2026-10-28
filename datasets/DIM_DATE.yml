@@ -1,0 +1,34 @@
+unique_name: DIM_DATE
+object_type: dataset
+label: DIM_DATE
+description: Calendar day dimension table, 2023-01-01 through 2025-12-31.
+connection_id: Connection - Tenant Warehouse
+table: DIM_DATE
+columns:
+- name: DATE_KEY
+  data_type: long
+- name: FULL_DATE
+  data_type: date
+- name: DATE_NAME
+  data_type: string
+- name: DAY_OF_WEEK_NAME
+  data_type: string
+- name: MONTH_KEY
+  data_type: long
+- name: MONTH_NAME
+  data_type: string
+- name: MONTH_OF_YEAR
+  data_type: long
+- name: QUARTER_KEY
+  data_type: long
+- name: QUARTER_NAME
+  data_type: string
+- name: QUARTER_OF_YEAR
+  data_type: long
+- name: YEAR_NUM
+  data_type: long
+- name: YEAR_NAME
+  data_type: string
+- name: PRIOR_YEAR_NUM
+  data_type: long
+  sql: YEAR_NUM - 1

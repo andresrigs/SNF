@@ -1,0 +1,6 @@
+unique_name: Gross Margin
+object_type: metric_calc
+label: Gross Margin
+description: Sales Amount minus Cost Amount.
+expression: '[Measures].[Sales Amount] - [Measures].[Cost Amount]'
+format: $#,##0.00

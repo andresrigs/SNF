@@ -1,0 +1,9 @@
+unique_name: Discount Amount
+object_type: metric
+label: Discount Amount
+description: Discount given off list price.
+calculation_method: sum
+format: $#,##0.00
+dataset: FACT_SALES
+column: DISCOUNT_AMOUNT
+unrelated_dimensions_handling: repeat
